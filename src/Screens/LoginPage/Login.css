@@ -1,0 +1,123 @@
+.login-screen{
+    background-color: black;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-and-register-form{
+    background-color: rgb(26, 29, 36);
+    padding: 1.25rem;
+    width: 30%;
+    border-radius: 0.25rem;
+}
+
+.dashboard-login{
+    margin-bottom: .75rem;
+    color: #ffff;
+    text-transform: capitalize;
+    font-weight: 600;
+    font-size: 1.125rem;
+    text-align: center;
+}
+
+.input-email-password{
+    width: 100%;
+    padding: 1rem;
+    border-radius: 0.25rem;
+    border: none;
+    color: #ffff;
+    background-color: black;
+
+}
+
+.input-submit{
+    width: 100%;
+    padding: 1rem;
+    border-radius: 0.25rem;
+    border: none;
+    text-transform: uppercase;
+    color: #ffff;
+    font-weight: 600;
+    cursor: pointer;
+    background-color: rgb(79, 70, 229);
+
+}
+
+.create-account-text{
+    color: #fff;
+    text-align: center;
+    font-size: 1rem;
+}
+
+
+.link-style-none {
+    text-decoration: none;
+    color: rgb(255, 221, 0);
+    cursor: pointer;
+}
+
+
+@media only screen and (min-width:300) {
+    .login-form{
+        width: 75%;
+    }
+}
+@media only screen and (min-width:480) {
+    .login-form{
+        width: 70%;
+    }
+}
+@media only screen and (min-width:640) {
+    .login-form{
+        width: 66% ;
+    }
+}
+
+@media only screen and (min-width:768) {
+    .login-form{
+        width: 50% ;
+    }
+}
+@media only screen and (min-width:900) {
+    .login-form{
+        width: 35%;
+    }
+}
+@media only screen and (min-width:1024) {
+    .login-form{
+        width: 25%;
+    }
+}
+
+
+
+
+/* @media (max-width: 992px) {
+    .login-page-wrapper {
+      padding: 177px 90px 33px 85px;
+    }
+  
+  
+    .login-form {
+      width: 50%;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .login-page-wrapper {
+      padding: 100px 80px 33px 80px;
+    }
+  
+    
+    .login-form {
+      width: 100%;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .login-page-wrapper {
+      padding: 100px 15px 33px 15px;
+    }
+  } */
