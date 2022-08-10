@@ -1,0 +1,14 @@
+.home-page{
+    background-color: black;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-content{
+    background-color: rgb(26, 29, 36);
+    padding: 1.25rem;
+    width: 22rem;
+    border-radius: 0.25rem;
+}

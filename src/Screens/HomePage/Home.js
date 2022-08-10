@@ -24,8 +24,12 @@ const Home = () => {
     }, [navigate])
 
     return (
-        <div>
+        <div className='home-page'>
+            <div className='home-content'>
+                <h1>Hello here is home page</h1>
+
             <button onClick={userlogout}>logout</button>
+            </div>
         </div>
     )
 }
