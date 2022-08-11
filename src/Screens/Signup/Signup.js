@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 
-import { Link, useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom";
 
-import "../LoginPage/Login.css"
+import { toast } from 'react-toastify';
+
+import "../LoginPage/Login.css";
 
 function Signup() {
 
@@ -23,7 +25,30 @@ function Signup() {
             auth = [{ 'name': 'aaaaa', 'email': 'aaaaa', 'password': 'aaaaa' }];
         }
 
-        if (password === confirmPassword) {
+        //validation
+
+        if (name=="") {
+            toast.error(' name field is requred!',{
+                position: "bottom-right",
+            });
+        } else if (email ==""){
+            toast.error('email field is requred',{
+                position: "bottom-right",
+            });
+        } else if (!email.includes("@")) {
+            toast.error('plz enter valid email addres',{
+                position: "bottom-right",
+           });
+        } else if (password === "") {
+            toast.error('password field is requred',{
+               position: "bottom-right",
+           });
+        } else if (password.length < 5) {
+            toast.error('password length greater five',{
+               position: "bottom-right",
+           });
+
+        } else if (password === confirmPassword) {
 
             const same = auth.filter(usersList => usersList.email === email)
 
@@ -35,13 +60,20 @@ function Signup() {
                 setPassword('');
                 setConfirmPassword('');
                 navigate('/');
+                toast.success('Successfully Registered, Please login to continue!',{
+                    position:  "bottom-right",
+                })
 
             } else {
-                alert(name + ' exist!')
+                toast.error(name + ' exist!',{
+                    position:  "bottom-right",
+                })
             }
 
         } else {
-            alert('Passwords are not matching')
+            toast.error('Passwords are not matching',{
+                position:  "bottom-right",
+            })
         }
     }
 

@@ -1,36 +1,38 @@
-import React, {useEffect}  from 'react'
-import { useNavigate } from "react-router-dom"
+import React, { useEffect } from 'react';
 
-import "./Home.css"
+import { useNavigate } from "react-router-dom";
+
+import hello from "../../Images/hello.gif";
+
+import Navbar from '../../Components/Navbar/Navbar';
+
+import "./Home.css";
 
 
 const Home = () => {
 
     let navigate = useNavigate();
 
-    const userlogout = () => {
-        localStorage.removeItem("userlogined")
-        navigate("/login");
-    }
 
     useEffect(() => {
+
         const userInfo = localStorage.getItem("userlogined")
-        if(userInfo){
+        if (userInfo) {
             navigate('/')
-        }else{
+        } else {
             navigate("/login")
         }
-       
+
     }, [navigate])
 
     return (
-        <div className='home-page'>
-            <div className='home-content'>
-                <h1>Hello here is home page</h1>
 
-            <button onClick={userlogout}>logout</button>
+        <>
+            <Navbar />
+            <div className='home-page'>
+                <img className='home-img' src={hello} alt="hello" />
             </div>
-        </div>
+        </>
     )
 }
 

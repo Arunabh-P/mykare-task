@@ -1,6 +1,4 @@
 .home-page{
-    background-color: black;
-    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11,4 +9,14 @@
     padding: 1.25rem;
     width: 22rem;
     border-radius: 0.25rem;
+}
+.home-img{
+    width: 35rem;
+}
+
+
+@media only screen and (max-width: 600px) {
+    .home-img{
+        width: 20rem;
+    }
 }

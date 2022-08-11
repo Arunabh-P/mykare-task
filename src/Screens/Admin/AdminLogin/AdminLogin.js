@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
-import { useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom";
 
+import { toast } from 'react-toastify';
 
 const AdminLogin = () => {
 
@@ -14,17 +15,34 @@ const AdminLogin = () => {
   const handleLogin = () => {
 
     if (userName === 'admin' && password === "admin") {
-
       localStorage.setItem('adminLogined', userName);
-
       setUserName('');
-
       setPassword('');
-
       navigate('/admin/home');
-      
+    }else{
+      toast.error('Wrong Details!', {
+        position: "bottom-right",
+    })
     }
   }
+
+  useEffect(() => {
+    try {
+        const adminInfo = localStorage.getItem("adminLogined")
+
+        if (adminInfo) {
+            navigate("/admin/home")
+        }else{
+          navigate("/admin")
+        }
+
+    } catch (error) {
+
+        console.log(error);
+
+    }
+
+}, [])
 
 
   return (

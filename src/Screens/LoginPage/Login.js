@@ -2,39 +2,45 @@ import React, { useState } from 'react';
 
 import { Link, useNavigate } from "react-router-dom"
 
+import { toast } from 'react-toastify';
+
 import "./Login.css"
+
 const Login = () => {
 
     let navigate = useNavigate();
-
 
     const [email, setEmail] = useState('');
 
     const [password, setPassword] = useState('');
 
-
     var auth = JSON.parse(localStorage.getItem('auth'))
 
     const handleLogin = () => {
         if (auth === null) {
-            alert('No user found')
+            toast.error('No user found', {
+                position: "bottom-right",
+            })
         }
 
         const same = auth.filter(usersList => usersList.email === email)
 
         if (same.length !== 0) {
-
             if (same[0].password === password) {
                 localStorage.setItem('userlogined', email);
                 setEmail('');
                 setPassword('');
                 navigate('/');
             } else {
-                alert('Password is wrong!')
+                toast.error('Password is wrong!', {
+                    position: "bottom-right",
+                })
             }
 
         } else {
-            alert(email + ' user not exist')
+            toast.error(email + ' user not exist', {
+                position: "bottom-right",
+            })
         }
 
     }
